@@ -15,7 +15,7 @@ module.exports = {
     extend: {
       colors: {
         bg: "#1F1F1F",       // dark steel background
-        dark: "#ECECEC",     // flipped to light for contrast
+        light: "#ECECEC",     // flipped to light for contrast
         copper: "#B8512A",   // accent
         copper_dark: "#995238",
         metal: "#ADB5BD",    // muted text
