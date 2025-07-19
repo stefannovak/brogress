@@ -14,9 +14,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: "#FD4F00",
-      }
-    },
+        bg: "#1F1F1F",       // dark steel background
+        dark: "#ECECEC",     // flipped to light for contrast
+        copper: "#B8512A",   // accent
+        copper_dark: "#995238",
+        metal: "#ADB5BD",    // muted text
+        steel: "#4A6268",    // secondary accent (optional)}, 
+	},
+     },
   },
   plugins: [
     require("@tailwindcss/forms"),
