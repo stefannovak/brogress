@@ -20,7 +20,10 @@ defmodule BrogressWeb.Router do
   scope "/", BrogressWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live_session :default,
+      on_mount: [{BrogressWeb.UserAuth, :mount_current_user}] do
+        live "/", Index
+      end
   end
 
   # Other scopes may use custom stacks.

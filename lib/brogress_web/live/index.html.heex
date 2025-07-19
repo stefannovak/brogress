@@ -8,12 +8,18 @@
     <p class="mt-2 text-metal text-base">
       Log your exercises, view your training history, and monitor your gains with ease.
     </p>
+
+    <%= if @user do %>
     <div class="mt-6">
       <a href="/users/log_in"
          class="bg-copper text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-copper_dark transition">
          Log In
       </a>
+    </div>    
+    <% else %>
+    <div>
+      Test
     </div>
-  </div>
+    <% end %>    
+  </div> 
 </div>
-
