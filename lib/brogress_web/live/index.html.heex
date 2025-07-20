@@ -11,15 +11,18 @@
 
     <%= if @user do %>
     <div class="mt-6">
+      <a href="/gym"
+         class="bg-copper text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-copper_dark transition">
+         To the gym, bro
+      </a>
+    </div>    
+    <% else %>
+    <div class="mt-6">
       <a href="/users/log_in"
          class="bg-copper text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-copper_dark transition">
          Log In
       </a>
     </div>    
-    <% else %>
-    <div>
-      Test
-    </div>
-    <% end %>    
+   <% end %>    
   </div> 
 </div>

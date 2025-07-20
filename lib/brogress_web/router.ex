@@ -60,7 +60,7 @@ defmodule BrogressWeb.Router do
       live "/users/reset_password", UserForgotPasswordLive, :new
       live "/users/reset_password/:token", UserResetPasswordLive, :edit
     end
-
+  
     post "/users/log_in", UserSessionController, :create
   end
 
@@ -70,7 +70,8 @@ defmodule BrogressWeb.Router do
     live_session :require_authenticated_user,
       on_mount: [{BrogressWeb.UserAuth, :ensure_authenticated}] do
       live "/users/settings", UserSettingsLive, :edit
-      live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
+      live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email 
+      live "/gym", Gym.Index
     end
   end
 
