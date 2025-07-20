@@ -14,14 +14,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: "#1F1F1F",       // dark steel background
-        light: "#ECECEC",     // flipped to light for contrast
-        copper: "#B8512A",   // accent
-        copper_dark: "#995238",
-        metal: "#ADB5BD",    // muted text
-        steel: "#4A6268",    // secondary accent (optional)}, 
-	},
-     },
+        bg: "#2A2C2E", // industrial charcoal gray — not black, not silver
+        light: "#F0F1F2",           // bright off-white text
+        copper: "#D86337",          // bolder, warmer copper
+        copper_dark: "#A54A2F",     // darkened hover variant
+        metal: "#7A848C",           // more saturated than #ADB5BD
+        steel: "#2E3A40",           // card backgrounds — dark, cold steel
+      },
+    },
   },
   plugins: [
     require("@tailwindcss/forms"),
@@ -30,14 +30,14 @@ module.exports = {
     //
     //     <div class="phx-click-loading:animate-ping">
     //
-    plugin(({addVariant}) => addVariant("phx-click-loading", [".phx-click-loading&", ".phx-click-loading &"])),
-    plugin(({addVariant}) => addVariant("phx-submit-loading", [".phx-submit-loading&", ".phx-submit-loading &"])),
-    plugin(({addVariant}) => addVariant("phx-change-loading", [".phx-change-loading&", ".phx-change-loading &"])),
+    plugin(({ addVariant }) => addVariant("phx-click-loading", [".phx-click-loading&", ".phx-click-loading &"])),
+    plugin(({ addVariant }) => addVariant("phx-submit-loading", [".phx-submit-loading&", ".phx-submit-loading &"])),
+    plugin(({ addVariant }) => addVariant("phx-change-loading", [".phx-change-loading&", ".phx-change-loading &"])),
 
     // Embeds Heroicons (https://heroicons.com) into your app.css bundle
     // See your `CoreComponents.icon/1` for more information.
     //
-    plugin(function({matchComponents, theme}) {
+    plugin(function ({ matchComponents, theme }) {
       let iconsDir = path.join(__dirname, "../deps/heroicons/optimized")
       let values = {}
       let icons = [
@@ -49,11 +49,11 @@ module.exports = {
       icons.forEach(([suffix, dir]) => {
         fs.readdirSync(path.join(iconsDir, dir)).forEach(file => {
           let name = path.basename(file, ".svg") + suffix
-          values[name] = {name, fullPath: path.join(iconsDir, dir, file)}
+          values[name] = { name, fullPath: path.join(iconsDir, dir, file) }
         })
       })
       matchComponents({
-        "hero": ({name, fullPath}) => {
+        "hero": ({ name, fullPath }) => {
           let content = fs.readFileSync(fullPath).toString().replace(/\r?\n|\r/g, "")
           let size = theme("spacing.6")
           if (name.endsWith("-mini")) {
@@ -73,7 +73,7 @@ module.exports = {
             "height": size
           }
         }
-      }, {values})
+      }, { values })
     })
   ]
 }

@@ -1,3 +1,46 @@
-<div>
-Hi
+<div class="min-h-screen bg-bg text-light px-6 py-8">
+  <div class="max-w-4xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-copper">Welcome back 👋</h1>
+      <p class="text-metal mt-1">Here's your Brogress dashboard.</p>
+    </div>
+    
+<!-- Main Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+<!-- Recent Workouts Card -->
+      <div class="bg-steel bg-opacity-10 p-4 rounded-lg border border-metal">
+        <h2 class="text-xl font-semibold text-copper mb-2">Recent Workouts</h2>
+        <ul class="text-sm text-light space-y-1">
+          <li>
+            No workouts yet.
+            <a href="/workouts/new" class="text-copper hover:underline">Log one now</a>
+          </li>
+        </ul>
+      </div>
+      
+<!-- Progress Card -->
+      <div class="bg-steel bg-opacity-10 p-4 rounded-lg border border-metal">
+        <h2 class="text-xl font-semibold text-copper mb-2">Progress Overview</h2>
+        <p class="text-sm text-light">No stats yet. Start logging to see your gains!</p>
+      </div>
+    </div>
+    
+<!-- Action Buttons -->
+    <div class="mt-10 flex flex-col sm:flex-row gap-4">
+      <a
+        href="/workouts/new"
+        class="bg-copper hover:bg-copper_dark text-white font-medium px-6 py-3 rounded-lg text-center"
+      >
+        Log New Workout
+      </a>
+      <a
+        href="/calendar"
+        class="bg-steel hover:bg-metal text-light border border-metal font-medium px-6 py-3 rounded-lg text-center"
+      >
+        View Calendar
+      </a>
+    </div>
+  </div>
 </div>
